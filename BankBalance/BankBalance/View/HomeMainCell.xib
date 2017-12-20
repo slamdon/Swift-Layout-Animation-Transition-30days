@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="HomeMainCell" customModule="BankBalance" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="139.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ibp-xz-onV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                        <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 172.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Xp-ES-39G" customClass="SKAnimationLabel" customModule="BankBalance" customModuleProvider="target">
+                        <rect key="frame" x="101.5" y="51.5" width="118" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="ibp-xz-onV" secondAttribute="bottom" id="2mC-iw-g3R"/>
+                    <constraint firstItem="ibp-xz-onV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="4nV-Xy-SGh"/>
+                    <constraint firstItem="9Xp-ES-39G" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="M84-f5-DSd"/>
+                    <constraint firstItem="9Xp-ES-39G" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="PTw-f2-kS6"/>
+                    <constraint firstAttribute="trailing" secondItem="ibp-xz-onV" secondAttribute="trailing" id="kJA-m7-4ja"/>
+                    <constraint firstItem="ibp-xz-onV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kPL-WU-GaQ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="aLabel" destination="9Xp-ES-39G" id="rrr-p0-8Z5"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

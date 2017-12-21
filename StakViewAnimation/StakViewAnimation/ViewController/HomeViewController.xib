@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="StakViewAnimation" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView1" destination="w7L-oY-U5e" id="YWh-eI-MXN"/>
+                <outlet property="imageView2" destination="ark-3X-UG3" id="ege-Xf-4Wn"/>
+                <outlet property="imageView3" destination="Jql-Aw-oyM" id="Ppv-Yq-DEi"/>
+                <outlet property="toggleStackView" destination="Yjg-SO-8BG" id="zv7-cJ-zvo"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n5S-7c-ydi">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-mountain-1" translatesAutoresizingMaskIntoConstraints="NO" id="w7L-oY-U5e">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="207.5"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-mountain-2" translatesAutoresizingMaskIntoConstraints="NO" id="ark-3X-UG3">
+                            <rect key="frame" x="0.0" y="207.5" width="375" height="208"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-mountain-4" translatesAutoresizingMaskIntoConstraints="NO" id="Jql-Aw-oyM">
+                            <rect key="frame" x="0.0" y="415.5" width="375" height="207.5"/>
+                        </imageView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="uoc-bM-ajU"/>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-SO-8BG">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeS-Vr-Mve">
+                            <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Toggle 1">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="toggle1ClickHandler:" destination="-1" eventType="touchUpInside" id="hal-1w-qYA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oix-ZD-f8i">
+                            <rect key="frame" x="125" y="0.0" width="125" height="44"/>
+                            <color key="backgroundColor" red="0.2666666667" green="0.78039215689999997" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Toggle 2">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="toggle2ClickHandler:" destination="-1" eventType="touchUpInside" id="62l-Cx-CQM"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="On9-Gu-5TW">
+                            <rect key="frame" x="250" y="0.0" width="125" height="44"/>
+                            <color key="backgroundColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Toggle 3">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="toggle3ClickHandler:" destination="-1" eventType="touchUpInside" id="cPt-Rg-xLj"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2ND-xq-fni"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="n5S-7c-ydi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9i7-SX-YhZ"/>
+                <constraint firstItem="Yjg-SO-8BG" firstAttribute="top" secondItem="n5S-7c-ydi" secondAttribute="bottom" id="Fa7-Mc-ahQ"/>
+                <constraint firstAttribute="trailing" secondItem="n5S-7c-ydi" secondAttribute="trailing" id="IUS-jf-t4L"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yjg-SO-8BG" secondAttribute="bottom" id="JXl-ob-oXY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yjg-SO-8BG" secondAttribute="trailing" id="Y2h-xf-fEI"/>
+                <constraint firstItem="Yjg-SO-8BG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nrp-Dd-26G"/>
+                <constraint firstItem="n5S-7c-ydi" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zOo-sv-7gV"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-40.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="img-mountain-1" width="1024" height="576"/>
+        <image name="img-mountain-2" width="1024" height="683"/>
+        <image name="img-mountain-4" width="1024" height="683"/>
+    </resources>
+</document>

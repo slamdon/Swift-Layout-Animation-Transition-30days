@@ -12,3 +12,9 @@
 ![StackViewAnimation](Resources/StackViewAnimation-2.gif)
 
 [Blog](https://ios.devdon.com/archives/935) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/BankBalance)
+
+# DrawingAnimation / CustomLoadingView
+
+![DrawingAnimation](Resources/DrawingAnimation.gif)
+
+[Blog](https://ios.devdon.com/archives/950) / [SourceCode](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/DrawingAnimation)

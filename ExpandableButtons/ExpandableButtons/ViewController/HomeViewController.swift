@@ -9,34 +9,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var imageView1: UIImageView!
-    @IBOutlet weak var imageView2: UIImageView!
-    @IBOutlet weak var imageView3: UIImageView!
-    @IBOutlet weak var toggleStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = ""
+        title = "Expandable Buttons"
+        setupView()
     }
     
-    
-    @IBAction func toggle1ClickHandler(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.imageView1.isHidden = !self.imageView1.isHidden
-        })
-    }
-    
-    @IBAction func toggle2ClickHandler(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.imageView2.isHidden = !self.imageView2.isHidden
-        })
-    }
-    
-    @IBAction func toggle3ClickHandler(_ sender: Any) {
-        UIView.animate(withDuration: 0.5, animations: {
-            self.imageView3.isHidden = !self.imageView3.isHidden
-        })
+    private func setupView() {
+        let screenSize = UIScreen.main.bounds
+        let menu = SKExpandableView(frame: CGRect(x: screenSize.width - 50, y: screenSize.height - 400, width: 44, height: 220))
+        menu.delegate = self
+        view.addSubview(menu)
     }
     
     private func showMessage(_ message:String) {
@@ -49,7 +33,6 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: SKExpandableViewDelegate {
     func didTapExpandable(button:SKExpandableButtonType) {
-        print("did tap")
         switch button {
             case .card: showMessage("did tap card")
             case .camera: showMessage("did tap camera")

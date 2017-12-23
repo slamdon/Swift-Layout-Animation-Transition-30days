@@ -18,3 +18,9 @@
 ![DrawingAnimation](Resources/DrawingAnimation.gif)
 
 [Blog](https://ios.devdon.com/archives/950) / [SourceCode](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/DrawingAnimation)
+
+# Expandable Buttons
+
+![Expandable Buttons](Resources/ExpandableButtons.gif)
+
+[Blog](https://ios.devdon.com/archives/964) / [SourceCode](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ExpandableButtons)

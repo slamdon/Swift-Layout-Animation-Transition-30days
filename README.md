@@ -23,4 +23,10 @@
 
 ![Expandable Buttons](Resources/ExpandableButtons.gif)
 
-[Blog](https://ios.devdon.com/archives/964) / [SourceCode](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ExpandableButtons)
+[Blog](https://ios.devdon.com/archives/964) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ExpandableButtons)
+
+# Image Slider
+
+![Image Slider](Resources/ImageSlider.gif)
+
+[Blog]() / [Source Code]()

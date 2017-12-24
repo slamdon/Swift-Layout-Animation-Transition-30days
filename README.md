@@ -30,3 +30,8 @@
 ![Image Slider](Resources/ImageSlider.gif)
 
 [Blog](https://ios.devdon.com/archives/979) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ImageSlider)
+
+# Parallax Scrolling
+![Parallax Scrolling](Resources/ParallaxScrolling.gif)
+
+[Blog](https://ios.devdon.com/archives/987) / [Source Code]()

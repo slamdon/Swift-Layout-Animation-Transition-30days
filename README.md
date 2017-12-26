@@ -39,4 +39,4 @@
 # Scratch Card
 ![Scratch Card](Resources/ScratchCard.gif)
 
-[Blog]() / [Source Code]()
+[Blog](https://ios.devdon.com/archives/1006) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ScratchCard)

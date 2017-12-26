@@ -34,4 +34,9 @@
 # Parallax Scrolling
 ![Parallax Scrolling](Resources/ParallaxScrolling.gif)
 
-[Blog](https://ios.devdon.com/archives/987) / [Source Code]()
+[Blog](https://ios.devdon.com/archives/987) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ParallaxScrolling)
+
+# Scratch Card
+![Scratch Card](Resources/ScratchCard.gif)
+
+[Blog]() / [Source Code]()

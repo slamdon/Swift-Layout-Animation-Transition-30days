@@ -40,3 +40,8 @@
 ![Scratch Card](Resources/ScratchCard.gif)
 
 [Blog](https://ios.devdon.com/archives/1006) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ScratchCard)
+
+# Flip Card
+![Flip Card](Resources/FlipCard.gif)
+
+[Blog](https://ios.devdon.com/archives/1019) / [Source Code]()

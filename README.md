@@ -50,3 +50,9 @@
 ![Image Filter](Resources/ImageFilter.gif)
 
 [Blog](https://ios.devdon.com/archives/1036) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ImageFilter)
+
+# Merry Christmas - Snow
+![Merry Christmas](Resources/MerryChristmas.gif)
+
+[Blog](https://ios.devdon.com/archives/1046) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/MerryChristmas)
+

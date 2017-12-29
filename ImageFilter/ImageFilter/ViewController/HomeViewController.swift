@@ -22,30 +22,14 @@ class HomeViewController: UIViewController {
         title = "Image Filter"
 
         setupView()
-        
-        print(CIFilter.filterNames(inCategory: kCICategoryBuiltIn).count)
-        for filterName in CIFilter.filterNames(inCategory: kCICategoryBuiltIn) {
-            let filter = CIFilter(name: filterName)
-            print("\(filterName) - \(filter?.attributes)")
-        }
     }
     
     private func setupView() {
         // set filter title list array.
-        filterTitleList = ["Normal" ,"PhotoEffectChrome", "PhotoEffectFade", "PhotoEffectInstant", "PhotoEffectMono", "PhotoEffectNoir", "PhotoEffectProcess", "PhotoEffectTonal", "PhotoEffectTransfer"]
+        filterTitleList = ["Normal" ,"PhotoEffectChrome", "PhotoEffectFade", "PhotoEffectInstant", "PhotoEffectMono", "PhotoEffectNoir", "PhotoEffectProcess", "PhotoEffectTonal", "PhotoEffectTransfer", "SRGBToneCurveToLinear", "XRay", "MedianFilter", "CIThermal"]
 
         // set filter name list array.
-        filterNameList = ["Normal" ,"CIPhotoEffectChrome", "CIPhotoEffectFade", "CIPhotoEffectInstant", "CIPhotoEffectMono", "CIPhotoEffectNoir", "CIPhotoEffectProcess", "CIPhotoEffectTonal", "CIPhotoEffectTransfer"]
-        
-        for filterName in CIFilter.filterNames(inCategory: kCICategoryBuiltIn) {
-//            filterNameList.append(filterName)
-//            var filterTitle = filterName
-            // remove 'CI'
-//            filterTitle.removeFirst()
-//            filterTitle.removeFirst()
-//            filterTitleList.append(filterName)
-        }
-        
+        filterNameList = ["Normal" ,"CIPhotoEffectChrome", "CIPhotoEffectFade", "CIPhotoEffectInstant", "CIPhotoEffectMono", "CIPhotoEffectNoir", "CIPhotoEffectProcess", "CIPhotoEffectTonal", "CIPhotoEffectTransfer", "CISRGBToneCurveToLinear", "CIXRay", "CIMedianFilter", "CIThermal"]
         
         let cellNib = UINib(nibName: "ImageCardCell", bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: "imageCell")
@@ -65,24 +49,19 @@ class HomeViewController: UIViewController {
         
         // 2 - init filter
         let filter = CIFilter(name: filterName)
-        filter?.setDefaults()
         filter?.setValue(sourceImage, forKey: kCIInputImageKey)
-        
-        if filter == nil { return nil}
         
         // 3 - init context
         let context = CIContext(options: nil)
         
         // 4 - output filtered image
-        if(filter!.outputImage != nil){
-            let outputCGImage = context.createCGImage(filter!.outputImage!, from: filter!.outputImage!.extent)
-            if  outputCGImage != nil {
-                return UIImage(cgImage: outputCGImage!)
+        if(filter?.outputImage != nil){
+            if let outputCGImage = context.createCGImage(filter!.outputImage!, from: filter!.outputImage!.extent) {
+                return UIImage(cgImage: outputCGImage)
             }
         }
         
         return nil
-
     }
 
 }
@@ -114,12 +93,14 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let row = indexPath.row
-        if row == 0 {
-            imageView.image = UIImage(named:"img-beach2")!
-            
-        } else if let image = renderImage(image: UIImage(named:"img-beach2")!, filterName: filterNameList[row]) {
-            imageView.image = image
-            
+        DispatchQueue.main.async {
+            if row == 0 {
+                self.imageView.image = UIImage(named:"img-beach2")!
+                
+            } else if let image = self.renderImage(image: UIImage(named:"img-beach2")!, filterName: self.filterNameList[row]) {
+                self.imageView.image = image
+                
+            }
         }
     }
 }

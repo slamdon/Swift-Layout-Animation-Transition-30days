@@ -44,13 +44,16 @@ class HomeViewController: UIViewController {
         emitterCell.alphaSpeed = -0.15
         
         // init emitter
-        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 40.0)
+        let rect = CGRect(x: 0.0, y: 0.0, width: view.bounds.width, height: 120)
         let emitter = CAEmitterLayer()
+        emitter.borderWidth = 4
+        emitter.borderColor = UIColor.yellow.cgColor
         emitter.emitterCells = [emitterCell]
         emitter.frame = rect
         
         // appear way
-        emitter.emitterShape = kCAEmitterLayerLine
+        emitter.emitterShape = kCAEmitterLayerRectangle
+        emitter.emitterMode = kCAEmitterLayerRectangle
         emitter.emitterPosition = CGPoint(x: rect.width/2, y: rect.height/2)
         emitter.emitterSize = rect.size
         view.layer.addSublayer(emitter)

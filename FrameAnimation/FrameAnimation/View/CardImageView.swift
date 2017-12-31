@@ -98,7 +98,6 @@ class CardImageView: UIImageView {
         monsterView.contentMode = .scaleAspectFit
         addSubview(monsterView)
         
-        
     }
     
     fileprivate func startBorderAnimation() {
@@ -113,7 +112,10 @@ class CardImageView: UIImageView {
         cardBorderView.removeFromSuperview()
     }
     
-    // MARK: public function
+}
+
+// MARK: Public function
+extension CardImageView {
     func openCard() {
         cardBackView.isHidden     = true
         cardBackAuraView.isHidden = true
@@ -126,6 +128,4 @@ class CardImageView: UIImageView {
         startBorderAnimation()
         
     }
-    
-    
 }

@@ -56,14 +56,14 @@
 
 [Blog](https://ios.devdon.com/archives/1046) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/MerryChristmas)
 
-# Lineage M Card Pack Animation - FrameAnimation
+# LineageM Card Pack Animation - FrameAnimation
 
 ![Frame Animation](Resources/FrameAnimation.gif)
 
 [Blog](https://ios.devdon.com/archives/1062) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/FrameAnimation)
 
-# Lineage M Slot Machine (角子機動畫)
+# LineageM Slot Machine (角子機動畫)
 
 ![Slot Machine](Resources/SlotMachine.gif)
 
-[Blog]() / [Source Code]()
+[Blog](https://ios.devdon.com/archives/1076) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/SlotMachine)

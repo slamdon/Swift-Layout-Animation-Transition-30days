@@ -64,6 +64,13 @@
 
 # LineageM Slot Machine (角子機動畫)
 
+
 ![Slot Machine](Resources/SlotMachine.gif)
 
 [Blog](https://ios.devdon.com/archives/1076) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/SlotMachine)
+
+
+# LineageM Collection
+![LineageM Collection](Resources/LineageCollection.gif)
+
+[Blog]() / [Source Code]()

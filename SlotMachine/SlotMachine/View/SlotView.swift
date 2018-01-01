@@ -104,6 +104,7 @@ extension SlotView {
         addSubview(cardAuraView!)
     }
     
+    // the easiest way to make it like sloting images, whitch ignored the performance.
     fileprivate func addMonsterView() {
         monsterScrollViewMask = UIView()
         monsterScrollViewMask!.frame = frame

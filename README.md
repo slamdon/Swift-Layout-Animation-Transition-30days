@@ -74,3 +74,9 @@
 ![LineageM Collection](Resources/LineageCollection.gif)
 
 [Blog](https://ios.devdon.com/archives/1108) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/LineageCollection)
+
+
+# CardLayout 
+![CardLayout](Resources/CardLayout.gif)
+
+[Blog]() / [Source Code]()

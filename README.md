@@ -79,4 +79,8 @@
 # CardLayout 
 ![CardLayout](Resources/CardLayout.gif)
 
+[Blog](https://ios.devdon.com/archives/1120) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/CardLayout)
+
+# Flat Card Layout
+![FlatCardLayout](Resources/FlatCardLayout.gif)
 [Blog]() / [Source Code]()

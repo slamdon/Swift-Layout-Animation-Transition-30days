@@ -11,7 +11,14 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    let imageNames = ["img-1", "img-2", "img-3", "img-4", "img-5", "img-6"]
+    
+    let imageNames = ["img-1", "img-2", "img-3", "img-4", "img-5", "img-6","img-1", "img-2", "img-3", "img-4", "img-5", "img-6","img-1", "img-2", "img-3", "img-4", "img-5", "img-6"]
+    
+    lazy var cardLayout: CardCollectionViewLayout = {
+        let layout = CardCollectionViewLayout()
+        layout.maximumVisibleItems = 4
+        return layout
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +35,21 @@ class HomeViewController: UIViewController {
         collectionView.delegate = self
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.collectionViewLayout = CardCollectionViewLayout()
+        collectionView.collectionViewLayout = cardLayout
         
         let cellNib = UINib(nibName: "CardCell", bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: "cardCell")
-
+        
+        let barButton = UIBarButtonItem(title: "Switch", style: .done, target: self, action: #selector(switchLayout))
+        navigationItem.setRightBarButton(barButton, animated: false)
+    }
+    
+    @objc fileprivate func switchLayout() {
+        if cardLayout.maximumVisibleItems == 8 {
+            cardLayout.maximumVisibleItems = 4
+        } else {
+            cardLayout.maximumVisibleItems = 6
+        }
     }
 }
 

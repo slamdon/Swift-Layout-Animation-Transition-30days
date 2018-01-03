@@ -83,4 +83,5 @@
 
 # Flat Card Layout
 ![FlatCardLayout](Resources/FlatCardLayout.gif)
+
 [Blog](https://ios.devdon.com/archives/1132) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/FlatCardLayout)

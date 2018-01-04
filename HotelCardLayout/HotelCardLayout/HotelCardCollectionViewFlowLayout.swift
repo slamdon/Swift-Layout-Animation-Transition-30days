@@ -15,42 +15,27 @@ class HotelCardCollectionViewFlowLayout: UICollectionViewFlowLayout {
         if collectionView == nil { return }
         
         collectionView!.showsVerticalScrollIndicator = false
+        
         itemSize = CGSize(width: collectionView!.bounds.width, height: 120)
+        
+        // make cards overlapping
         minimumLineSpacing = -20.0
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let items = NSArray (array: super.layoutAttributesForElements(in: rect)!, copyItems: true)
+        if super.layoutAttributesForElements(in: rect) == nil { return nil }
         
-        items.enumerateObjects(using: { (object, idex, stop) -> Void in
-            let attributes = object as! UICollectionViewLayoutAttributes
+        var attributes = [UICollectionViewLayoutAttributes]()
+        for attribute in super.layoutAttributesForElements(in: rect)! {
+            let minY = collectionView!.bounds.minY + collectionView!.contentInset.top
+            let maxY = attribute.frame.origin.y
+            let newOrigin = CGPoint(x: attribute.frame.origin.x, y: max(minY, maxY))
             
-//            if attributes.representedElementKind == UICollectionElementKindSectionHeader {
-//                headerAttributes = attributes
-//            }else {
-//                self.updateCellAttributes(attributes)
-//            }
-            self.updateCellAttributes(attributes)
-        })
-        return items as? [UICollectionViewLayoutAttributes]
-    }
-    
-//    func calculateAttributes() -> UICollectionViewLayoutAttributes? {
-//        if collectionView == nil { return nil }
-//        let minY = collectionView!.bounds.minY + collectionView!.contentInset.top
-//
-//
-//    }
-    
-    func updateCellAttributes(_ attributes: UICollectionViewLayoutAttributes) {
-        let minY = collectionView!.bounds.minY + collectionView!.contentInset.top
-        let maxY = attributes.frame.origin.y
-        let finalY = max(minY, maxY)
-        
-        var origin = attributes.frame.origin
-        origin.y = finalY
-        attributes.frame = CGRect(origin: origin, size: attributes.frame.size)
-        attributes.zIndex = attributes.indexPath.row
+            attribute.frame = CGRect(origin: newOrigin, size: attribute.frame.size)
+            attribute.zIndex = attribute.indexPath.row
+            attributes.append(attribute)
+        }
+        return attributes
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {

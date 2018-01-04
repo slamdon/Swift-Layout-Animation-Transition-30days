@@ -89,3 +89,4 @@
 # Hotel Card Layout
 ![Hotel Card Layout](Resources/HotelCardLayout.gif)
 
+[Blog](https://ios.devdon.com/archives/1142) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/HotelCardLayout)

@@ -12,12 +12,11 @@ class HotelCardCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
+
     var data:Any?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         layer.cornerRadius = 12
         layer.masksToBounds = true
     }

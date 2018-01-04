@@ -76,7 +76,7 @@
 [Blog](https://ios.devdon.com/archives/1108) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/LineageCollection)
 
 
-# CardLayout 
+# Card Layout 
 ![CardLayout](Resources/CardLayout.gif)
 
 [Blog](https://ios.devdon.com/archives/1120) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/CardLayout)
@@ -85,3 +85,7 @@
 ![FlatCardLayout](Resources/FlatCardLayout.gif)
 
 [Blog](https://ios.devdon.com/archives/1132) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/FlatCardLayout)
+
+# Hotel Card Layout
+![Hotel Card Layout](Resources/HotelCardLayout.gif)
+

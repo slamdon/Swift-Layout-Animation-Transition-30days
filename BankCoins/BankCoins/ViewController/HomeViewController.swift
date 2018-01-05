@@ -72,7 +72,7 @@ class HomeViewController: UIViewController {
     fileprivate func initCoinWith(number:Int) {
         let coinImageName = "icon_coin_\(number % 2 + 1)"
         let coinView = UIImageView(image: UIImage(named:coinImageName))
-        let x = bankView.center.x + CGFloat(arc4random() % 40)
+        let x = bankView.center.x
         let y = bankView.center.y - 20
         coinView.center = CGPoint(x: x , y: y)
         
@@ -143,6 +143,4 @@ extension HomeViewController:CAAnimationDelegate {
             
         }
     }
-    
-    
 }

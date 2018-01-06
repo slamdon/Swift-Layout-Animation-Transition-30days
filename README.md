@@ -94,9 +94,9 @@
 # Bank Coins
 ![Bank Coins](Resources/BankCoins.gif)
 
-[Blog]() / [Source Code]()
+[Blog](https://ios.devdon.com/archives/1156) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/BankCoins)
 
 # 3DCard Layout
 ![3DCard Layout](Resources/3DCardLayout.gif)
 
-[Blog]() / [Source Code]()
+[Blog](https://ios.devdon.com/archives/1167) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/3DCardLayout)

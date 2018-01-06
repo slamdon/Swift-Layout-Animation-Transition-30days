@@ -95,3 +95,8 @@
 ![Bank Coins](Resources/BankCoins.gif)
 
 [Blog]() / [Source Code]()
+
+# 3DCard Layout
+![3DCard Layout](Resources/3DCardLayout.gif)
+
+[Blog]() / [Source Code]()

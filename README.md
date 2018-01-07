@@ -102,6 +102,6 @@
 [Blog](https://ios.devdon.com/archives/1167) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/3DCardLayout)
 
 # Snapshot
-![Snapshot](Resources/snapshot.gif)
+![Snapshot](Resources/Snapshot.gif)
 
 [Blog]() / [Source Code]()

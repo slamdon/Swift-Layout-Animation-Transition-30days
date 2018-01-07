@@ -10,16 +10,17 @@ import UIKit
 
 class Card3DFlowLayout: UICollectionViewFlowLayout {
     var previousOffset:CGFloat = 0
+    var difference:CGFloat     = 0
     var mainIndexPath:IndexPath?
     var movingInIndexPath:IndexPath?
-    var difference:CGFloat = 0
+    
     
     override func prepare() {
         super.prepare()
         setupLayout()
     }
     
-    func setupLayout() {
+    fileprivate func setupLayout() {
         collectionView?.isPagingEnabled = true
         scrollDirection = .horizontal
         
@@ -30,18 +31,6 @@ class Card3DFlowLayout: UICollectionViewFlowLayout {
         minimumLineSpacing = inset * 2
         sectionInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
         
-    }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let attributes = super.layoutAttributesForItem(at: indexPath)
-        applyTransformToLayoutAttributes(attribute: attributes!)
-        
-        return attributes
-    }
-    
-    // indicate that we want to redraw as we scroll
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        return true
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
@@ -58,8 +47,10 @@ class Card3DFlowLayout: UICollectionViewFlowLayout {
         } else if cellIndices.count > 1 {
             let firstIndexPath = cellIndices.first
             if firstIndexPath == mainIndexPath {
+                // scroll left
                 movingInIndexPath = cellIndices[1]
             } else {
+                // scroll right
                 movingInIndexPath = cellIndices.first
                 mainIndexPath = cellIndices[1]
             }
@@ -73,86 +64,65 @@ class Card3DFlowLayout: UICollectionViewFlowLayout {
         }
         
         return attributes
-        
     }
     
-    func applyTransformToLayoutAttributes(attribute:UICollectionViewLayoutAttributes) {
+    fileprivate func applyTransformToLayoutAttributes(attribute:UICollectionViewLayoutAttributes) {
+        if(collectionView == nil){ return }
+        
+        var cell:UICollectionViewCell?
         if attribute.indexPath.row == mainIndexPath?.row {
-            let cell = collectionView!.cellForItem(at: mainIndexPath!)
+            cell = collectionView!.cellForItem(at: mainIndexPath!)
             attribute.transform3D = transformFromView(view: cell!)
             
         } else if attribute.indexPath.row == movingInIndexPath?.row {
-            let cell = collectionView!.cellForItem(at: movingInIndexPath!)
+            cell = collectionView!.cellForItem(at: movingInIndexPath!)
             attribute.transform3D = transformFromView(view: cell!)
+            
         }
+        
     }
-    
+
+    // render when we scroll
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
+    }
     
 }
 
-// MARK:
+// MARK: Calculates
 extension Card3DFlowLayout {
     
-    func transformFromView(view:UIView) -> CATransform3D {
+    fileprivate func transformFromView(view:UICollectionViewCell) -> CATransform3D {
         let angle = angleForView(view: view)
-        let height = heightOffsetForView(view: view)
-        let xAxis = xAxisForView(view: view)
-        return transformFromAngle(angle: angle, height: height, xAxis: xAxis)
+        return transformFromAngle(angle: angle, with: view)
         
     }
     
-    func transformFromAngle(angle:CGFloat, height:CGFloat, xAxis:Bool) -> CATransform3D {
-        var t:CATransform3D = CATransform3DIdentity
-        t.m34 = 1.0 / -500
-        
-        if xAxis {
-            t = CATransform3DRotate(t, angle, 1, 1, 0)
-        } else {
-            t = CATransform3DRotate(t, angle, -1, 1, 0)
-        }
-        return t
-    }
-}
-
-extension Card3DFlowLayout {
-    
-    func baseOffsetForView(view:UIView) -> CGFloat {
-        let collectionViewCell = view as? UICollectionViewCell
-        let offset = CGFloat(collectionView!.indexPath(for: collectionViewCell!)!.row) * collectionView!.bounds.size.width
-        return offset
-    }
-    
-    func heightOffsetForView(view:UIView) -> CGFloat {
-        var height:CGFloat = 0
-        let baseOffsetForCurrentView = baseOffsetForView(view: view)
-        let currentOffset = collectionView!.contentOffset.x
-        let scrollViewWidth = collectionView!.bounds.size.width
-        
-        height = CGFloat(120 * (currentOffset - baseOffsetForCurrentView) / scrollViewWidth)
-        if height < 0 {
-            height = -1 * height
-        }
-        
-        return height
-    }
-    
-    func angleForView(view:UIView) -> CGFloat {
-        let baseOffsetForCurrentView = baseOffsetForView(view: view)
+    fileprivate func angleForView(view:UICollectionViewCell) -> CGFloat {
+        let baseOffsetForCurrentView = CGFloat(collectionView!.indexPath(for: view)!.row) * collectionView!.bounds.size.width
         let currentOffset = collectionView!.contentOffset.x
         let scrollViewWidth = collectionView!.bounds.size.width
         let angle = (currentOffset - baseOffsetForCurrentView) / scrollViewWidth
         return angle
     }
     
-    func xAxisForView(view:UIView) -> Bool {
-        let baseOffsetForCurrentView = baseOffsetForView(view: view)
+    fileprivate func transformFromAngle(angle:CGFloat, with view:UICollectionViewCell) -> CATransform3D {
+        var transform:CATransform3D = CATransform3DIdentity
+        transform.m34 = 1.0 / -500
+        
+        let baseOffsetForCurrentView = CGFloat(collectionView!.indexPath(for: view)!.row) * collectionView!.bounds.size.width
         let currentOffset = collectionView!.contentOffset.x
         let offset = currentOffset - baseOffsetForCurrentView
+        var isScrollingLeft = false
+        if offset >= 0 { isScrollingLeft = true }
         
-        if offset >= 0 {
-            return true
+        if isScrollingLeft {
+            transform = CATransform3DRotate(transform, angle, 1.0, 1.0, 0.0)
         } else {
-            return false
+            transform = CATransform3DRotate(transform, angle, -1.0, 1.0, 0.0)
         }
+        return transform
     }
+    
+
 }

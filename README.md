@@ -105,3 +105,8 @@
 ![Snapshot](Resources/Snapshot.gif)
 
 [Blog](https://ios.devdon.com/archives/1178) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/Snapshot)
+
+# ColorDiffusionTransition
+![ColorDiffusionTransition](Resources/ColorDiffusionTransition.gif)
+
+[Blog](https://ios.devdon.com/archives/1185) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/ColorDiffusionTransition)

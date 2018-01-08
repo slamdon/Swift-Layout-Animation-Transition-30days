@@ -104,4 +104,4 @@
 # Snapshot
 ![Snapshot](Resources/Snapshot.gif)
 
-[Blog]() / [Source Code]()
+[Blog](https://ios.devdon.com/archives/1178) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/Snapshot)

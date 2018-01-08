@@ -36,25 +36,25 @@ class HomeViewController: UIViewController {
         captureView.layer.borderWidth = 2
         captureView.backgroundColor = UIColor.black
         captureView.alpha = 0.4
-        
         view.addSubview(captureView)
     }
     
     @IBAction func snapshotClickHandler(_ sender: Any) {
-        let image = captureSunImageView()
         let VC = DetailViewController()
-        VC.snapshotImage = image
+        VC.snapshotImage = captureImage()
         navigationController?.pushViewController(VC, animated: true)
     }
     
-    fileprivate func captureSunImageView() ->  UIImage {
-        // 抓一張SourceView的圖（HomeViewController）
+    fileprivate func captureImage() ->  UIImage {
+        // capture HomeViewController's view
         UIGraphicsBeginImageContextWithOptions((view.bounds.size), true, 1)
         view?.drawHierarchy(in: view.bounds, afterScreenUpdates: false)
+        
+        // Snapshot
         let snapShot = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // SnapShot的圖
+        // crop image
         let tempImageRef = snapShot.cgImage!
         let croppedImageRef = tempImageRef.cropping(to: captureView.frame)
         

@@ -11,12 +11,12 @@ import UIKit
 class SKDiffussionTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     weak var animatedView: UIView?
-    var startFrame = CGRect.zero
     var startBackgroundColor: UIColor?
     
     var isReverse = false
     var transitionDuration:TimeInterval = 0.5
     
+    private override init() { super.init() }
     convenience init(animatedView: UIView) {
         self.init()
         self.animatedView = animatedView
@@ -28,22 +28,23 @@ class SKDiffussionTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        if let animatedView = animatedView, let superview = animatedView.superview {
-            // Get the frame rect in the screen coordinates
-            self.startFrame = superview.convert(animatedView.frame, to: nil)
-            startBackgroundColor = animatedView.backgroundColor
+        // get frame and backgroundColor
+        var startFrame = CGRect.zero
+        if animatedView != nil {
+            startFrame = animatedView!.frame
+            startBackgroundColor = animatedView!.backgroundColor
         }
         
-        // Use if the transitionContext.containerView is not fullScreen
-        let startFrame = transitionContext.containerView.superview?.convert(self.startFrame, to: transitionContext.containerView) ?? self.startFrame
-        
+        // init animated view for transition
         let animatedViewForTransition = UIView(frame: startFrame)
-        transitionContext.containerView.addSubview(animatedViewForTransition)
-        
         animatedViewForTransition.clipsToBounds = true
         animatedViewForTransition.layer.cornerRadius = animatedViewForTransition.frame.height / 2.0
         animatedViewForTransition.backgroundColor = self.startBackgroundColor
         
+        // add animated view on transitionContext's containerView
+        transitionContext.containerView.addSubview(animatedViewForTransition)
+        
+        // set presentedController
         let presentedController: UIViewController
         if !isReverse {
             presentedController = transitionContext.viewController(forKey: .to)!
@@ -68,21 +69,18 @@ class SKDiffussionTransition: NSObject, UIViewControllerAnimatedTransitioning {
                                 animatedViewForTransition.transform = finalTransform
                                 animatedViewForTransition.center = transitionContext.containerView.center
                                 animatedViewForTransition.backgroundColor = presentedController.view.backgroundColor
-            },
-                              completion: { (_) in
-            })
+            },completion: nil)
             
-            UIView.animate(withDuration: self.transitionDuration(using: transitionContext) * 0.42,
-                           delay: self.transitionDuration(using: transitionContext) * 0.58,
+            UIView.animate(withDuration: self.transitionDuration(using: transitionContext) * 0.4,
+                           delay: self.transitionDuration(using: transitionContext) * 0.6,
                            animations: {
                             presentedController.view.layer.opacity = 1
-            },
-                           completion: { (_) in
-                            animatedViewForTransition.removeFromSuperview()
-                            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+            },completion: { (_) in
+                animatedViewForTransition.removeFromSuperview()
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             })
-        }
-        else {
+            
+        } else {
             animatedViewForTransition.transform = finalTransform
             animatedViewForTransition.center = transitionContext.containerView.center
             animatedViewForTransition.backgroundColor = presentedController.view.backgroundColor
@@ -91,9 +89,9 @@ class SKDiffussionTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 presentedController.view.layer.opacity = 0
             })
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + self.transitionDuration(using: transitionContext) * 0.32) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + self.transitionDuration(using: transitionContext) * 0.3) {
                 UIView.transition(with: animatedViewForTransition,
-                                  duration: self.transitionDuration(using: transitionContext) * 0.58,
+                                  duration: self.transitionDuration(using: transitionContext) * 0.6,
                                   options: [],
                                   animations: {
                                     animatedViewForTransition.transform = CGAffineTransform.identity

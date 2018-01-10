@@ -89,14 +89,14 @@ extension HomeViewController: UINavigationControllerDelegate {
         
         if operation == UINavigationControllerOperation.push {
             transition.operation = UINavigationControllerOperation.push
-            transition.duration = 1
+            transition.duration = 1.5
             transition.selectedFrame = self.selectedCellFrame
             return transition
         }
         
         if operation == UINavigationControllerOperation.pop {
             transition.operation = UINavigationControllerOperation.pop
-            transition.duration = 1
+            transition.duration = 1.5
             
             return transition
         }

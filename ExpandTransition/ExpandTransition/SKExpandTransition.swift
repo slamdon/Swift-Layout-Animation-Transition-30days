@@ -102,9 +102,10 @@ class SKExpandTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 
                 destinationView?.alpha = 1
                 
-            }, completion: { (finish) -> Void in
+            }, completion: { [unowned self] (finish) -> Void in
                 self.imageViewTop?.removeFromSuperview()
                 self.imageViewBottom?.removeFromSuperview()
+                backgroundView.removeFromSuperview()
                 
                 transitionContext.completeTransition(true)
             })
@@ -132,9 +133,10 @@ class SKExpandTransition: NSObject, UIViewControllerAnimatedTransitioning {
                 
                 sourceView?.alpha = 0
                 
-            }, completion: { (finish) -> Void in
+            }, completion: { [unowned self] (finish) -> Void in
                 self.imageViewTop?.removeFromSuperview()
                 self.imageViewBottom?.removeFromSuperview()
+                backgroundView.removeFromSuperview()
                 
                 destinationView?.alpha = 1
                 transitionContext.completeTransition(true)
@@ -149,12 +151,10 @@ class SKExpandTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
 extension SKExpandTransition: UIViewControllerTransitioningDelegate {
     open func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
         return self
     }
     
     open func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
         return self
     }
 }

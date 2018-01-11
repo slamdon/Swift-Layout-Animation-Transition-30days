@@ -11,10 +11,10 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var optionsSegment: UISegmentedControl!
+    
     let owlImageView = UIImageView(image: UIImage(named:"img-owl"))
     let catImageView = UIImageView(image: UIImage(named:"img-cat"))
-    
-    @IBOutlet weak var optionsSegment: UISegmentedControl!
     var isReverseNeeded = false
     
     override func viewDidLoad() {

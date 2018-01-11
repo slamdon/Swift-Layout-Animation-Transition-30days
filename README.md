@@ -119,6 +119,12 @@
 
 
 # Transitions (UIView Transitions)
+
 ![Transitions](Resources/Transitions.gif)
+
+[Blog](https://ios.devdon.com/archives/1207) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/Transitions)
+
+# Gradient Animation
+![Gradient Animation](Resources/GradientAnimation.gif)
 
 [Blog]() / [Source Code]()

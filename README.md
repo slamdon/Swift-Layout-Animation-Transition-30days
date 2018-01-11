@@ -127,4 +127,4 @@
 # Gradient Animation
 ![Gradient Animation](Resources/GradientAnimation.gif)
 
-[Blog]() / [Source Code]()
+[Blog](https://ios.devdon.com/archives/1217) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/GradientAnimation)

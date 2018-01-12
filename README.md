@@ -128,3 +128,9 @@
 ![Gradient Animation](Resources/GradientAnimation.gif)
 
 [Blog](https://ios.devdon.com/archives/1217) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/GradientAnimation)
+
+# Start Page Movie
+
+![Start Page Movie](Resources/StartPageMovie.gif)
+
+[Blog]() / [Source Code]()

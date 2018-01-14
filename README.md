@@ -135,7 +135,7 @@
 
 [Blog](https://ios.devdon.com/archives/1224) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/StartPageMovie)
 
-# Loading Animation
+# Loading Animation - Zhihu
 ![Loading Animation](Resources/LoadingAnimation-Zhihu-complete.gif)
 
 ![Loading Animation](Resources/LoadingAnimation-Zhihu-complete-slow.gif)

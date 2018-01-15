@@ -146,4 +146,4 @@
 
 ![Loading Animation](Resources/LoadingAnimation-dots-complete.gif)
 
-[Blog]() / [Source Code]()
+[Blog](https://ios.devdon.com/archives/1246) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/LoadingAnimation-Dots)

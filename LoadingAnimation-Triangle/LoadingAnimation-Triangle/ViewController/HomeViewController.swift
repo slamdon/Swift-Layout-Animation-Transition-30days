@@ -1,6 +1,6 @@
 //
 //  HomeViewController.swift
-//  LoadingAnimation-Dots
+//  LoadingAnimation-Triangle
 //
 //  Created by don chen on 2018/1/14.
 //  Copyright © 2018年 Don Chen. All rights reserved.
@@ -9,12 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Loading - Dots"
+        title = "Loading - Triangle"
     }
     
     override func viewDidAppear(_ animated: Bool) {

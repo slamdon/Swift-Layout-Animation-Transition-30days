@@ -159,3 +159,10 @@
 ![Loading Animation](Resources/LoadingAnimation-Switch-slow.gif)
 
 [Blog](https://ios.devdon.com/archives/1265) / [Source Code](https://github.com/slamdon/Swift-Layout-Animation-Transition-30days/tree/master/LoadingAnimation-Switch)
+
+# LoadingAnimation - Walk
+
+![Walk](Resources/LoadingAnimation-Walk-complete.gif)
+![Walk](Resources/LoadingAnimation-Walk-slow.gif)
+
+[Blog]() / [Source Code]()
